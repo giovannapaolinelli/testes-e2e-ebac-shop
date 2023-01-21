@@ -13,6 +13,7 @@ context('Funcionalidade Login', () => {
     });
 
     afterEach(() => {
+        cy.viewport(1280, 720)
         cy.screenshot()
     });
 
