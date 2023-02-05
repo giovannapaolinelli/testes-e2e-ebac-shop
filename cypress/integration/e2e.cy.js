@@ -19,10 +19,8 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         var produto = ['Abominable Hoodie', 'M', 'Red', 4]
         cy.addProdutos(produto[0], produto[1], produto[2], produto[3])
         cy.get('.dropdown-toggle > .mini-cart-items').should('contain', produto[3])
-
-        cy.get('.woocommerce-message > .button').click()
-
-        cy.get('.checkout-button').click()
+        cy.get('.top-cart-wishlist').click()
+        cy.get('#cart > .dropdown-menu > .widget_shopping_cart_content > .mini_cart_content > .mini_cart_inner > .mcart-border > .buttons > .checkout').click()
 
         Checkout.preencherCheckout(
             dadosEndereco[1].nome,
